@@ -23,6 +23,7 @@
     "@ember/optional-features": "^1.3.0",
     "@glimmer/component": "^1.0.1",
     "@glimmer/tracking": "^1.0.0",
+    "@lblod/ember-rdfa-editor": "^0.46.1",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.6.0",
@@ -56,9 +57,5 @@
   },
   "ember": {
     "edition": "octane"
-  },
-  "dependencies": {
-    "@lblod/ember-rdfa-editor": "file:../ember-rdfa-editor",
-    "test-plugin": "file:../test-plugin"
   }
 }
