@@ -57,5 +57,8 @@
   "ember": {
     "edition": "octane"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@lblod/ember-rdfa-editor": "file:../ember-rdfa-editor",
+    "test-plugin": "file:../test-plugin"
+  }
 }
