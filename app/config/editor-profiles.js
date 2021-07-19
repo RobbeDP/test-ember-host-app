@@ -1,7 +1,6 @@
 export default {
   default: [
   ],
-  all: [
-  ],
+  all: [],
   none: []
 };

@@ -1,5 +1,8 @@
 export default {
-  all: [
-    "test-plugin"
-  ]
+  default: [
+    "rdfa-editor-event-based-plugin"
+  ],
+  all: [],
+  none: []
 };
+
