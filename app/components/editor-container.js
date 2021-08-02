@@ -1,20 +1,23 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import defaultContext from '../config/editor-document-default-context';
 import {tracked} from "@glimmer/tracking";
 
 export default class EditorContainer extends Component {
-  @tracked isReady = false
+  @tracked isReady = false;
 
-  setRdfaContext(element){
+  setRdfaContext(element) {
     element.setAttribute('vocab', JSON.parse(defaultContext)['vocab']);
-    element.setAttribute('prefix', this.prefixToAttrString(JSON.parse(defaultContext)['prefix']));
+    element.setAttribute(
+      'prefix',
+      this.prefixToAttrString(JSON.parse(defaultContext)['prefix'])
+    );
     element.setAttribute('typeof', 'foaf:Document');
     element.setAttribute('resource', '#');
   }
 
-  prefixToAttrString(prefix){
+  prefixToAttrString(prefix) {
     let attrString = '';
-    Object.keys(prefix).forEach(key => {
+    Object.keys(prefix).forEach((key) => {
       let uri = prefix[key];
       attrString += `${key}: ${uri} `;
     });
@@ -22,9 +25,8 @@ export default class EditorContainer extends Component {
     return attrString;
   }
 
-  didInsertElement() {
-    super.didInsertElement(...arguments);
-    this.setRdfaContext(this.element);
-    this.set('isReady', true);
-  }
+  initializeComponent = (element) => {
+    this.setRdfaContext(element);
+    this.isReady = true;
+  };
 }
